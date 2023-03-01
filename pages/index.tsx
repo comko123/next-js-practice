@@ -1,7 +1,34 @@
-import { NextPage } from "next"
+import axios from "axios"
+import Link from "next/link"
+import Image from "next/image"
+import useSWR , { SWRConfig } from "swr"
+import { GetServerSideProps, NextPage } from "next"
 
-const Main:NextPage = () => {
+export interface movie {[key:string]:string|number|number[]}
 
-return(<>123</>)
+const Movie:NextPage = () => {
+const {data:{results}} = useSWR("/movie/all") 
+//Main 컴포넌트에서 기본값을 설정했기 때문에 데이터가 비어있는 상태가 아닌 상태로 시작한다.
+return(<div className="grid grid-cols-5 my-3">
+{results?.map((item:movie)=><Link href={`/${item.id}`} key={item.id as string}>
+<Image width={3000} height={30} alt="" priority
+className="w-52 aspect-square my-2 shadow-xl rounded-xl mx-auto hover:scale-x-105 transition-transform cursor-pointer" 
+src={`https://image.tmdb.org/t/p/w500/${item.poster_path as string}`}/>
+</Link>)}
+</div>)
 }
+
+const Main:NextPage<movie> = ({results}) => {
+    //불러온 데이터를 props로 받아 swr키에 기본값으로 설정한다.
+    return(<SWRConfig value={{fallback:{"/movie/all":results}}}>
+        <Movie/>
+    </SWRConfig>)
+} 
+
+export const getServerSideProps:GetServerSideProps = async() => {
+    //sever-side에서 데이터를 불러온다.
+    const {results} = await(await axios("http://localhost:3000/movie/all")).data
+return({props:{results}})
+}
+
 export default Main
