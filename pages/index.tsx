@@ -9,6 +9,8 @@ export interface movie {[key:string]:string|number|number[]}
 const Movie:NextPage = () => {
 const {data:{results}} = useSWR("/movie/all") 
 //Main 컴포넌트에서 기본값을 설정했기 때문에 데이터가 비어있는 상태가 아닌 상태로 시작한다.
+/*SWR를 사용하면서, SEO를 위해 페이지를 미리 렌더링할 수 있으며 
+클라이언트 측에서 caching, revalidation, focus tracking, refetching와 같은 기능도 사용 가능하다.*/
 return(<div className="grid grid-cols-5 my-3">
 {results?.map((item:movie)=><Link href={`/${item.id}`} key={item.id as string}>
 <Image width={3000} height={30} alt="" priority
@@ -27,6 +29,7 @@ const Main:NextPage<movie> = ({results}) => {
 
 export const getServerSideProps:GetServerSideProps = async() => {
     //sever-side에서 데이터를 불러온다.
+    //페이지에서 getServerSideProps라는 함수를 export 하면 Next.js는 해당 함수에서 반환된 데이터를 사용하여 각 요청에서 이 페이지를 미리 랜더링한다.
     const {results} = await(await axios("http://localhost:3000/movie/all")).data
 return({props:{results}})
 }
