@@ -26,9 +26,10 @@
 - get static props 와 get static paths 를 이용하여 사전에 html파일로 빌드하여
   정적으로 구현하는 방식.
 
-#### render_third
+#### render_third : isr이용한 정적이면서 최신데이터를 보여주는 페이지를 구성
 
--
+- get static props 와 get static paths 를 이용하여 페이지를 정적으로 만들며
+  동적인 라우팅을 가지는 페이지는 사용자가 요청을 할때마다 페이지를 생성하는 방식.
 
 #### render_fourth
 
