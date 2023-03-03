@@ -1,16 +1,2 @@
-# ssg (Server-Side-Generation or Static-Site-Generation)
-- ssr과는 달리 ssg는 페이지가 빌드되고, nextjs가 해당 페이지를 export 한 후 일반 html로 될 때, 딱 한 번만 실행되며
-ssr은 유저의 요청이 발생할 때마다 일어난다.
-
-
-## get static props
-- 프로젝트 빌드 시에 딱 한 번만 호출 되며, static file로 빌드된다.
-
-- 페이지를 정적으로 구성하는 방식으로 html페이지로 미리 만들어 필요에따라 반환하기 때문에 빠른속도를 가진다.
-
-## get static paths 
-- 동적 라우팅으로 페이지를 동적으로 생성할 때, 특정 페이지는 정적으로 생성할때 사용하는 방식.
-
-- 페이지를 미리 생성 하기 때문에 예를 들어 장터에 게시물이 천개가 있다고 가정하면 천개의 페이지를 미리 만들기 때문에 
-비효율적인 사용처가 존재하며 게시물이 적은 공지사항이나 자주 업데이트가 발생하지 않는 페이지에서 사용하기 적합하다.
+# isr (Incremental Static Regeneration)
 
