@@ -1,8 +1,8 @@
 import axios from "axios"
-import { GetStaticPaths, GetStaticProps, NextPage } from "next"
+import { GetStaticPaths, GetStaticProps,GetServerSideProps, NextPage } from "next"
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { movie } from "."
+import { movie } from ".."
 
 const Detail:NextPage<{data:movie}> = ({data}) => {
     const {replace} = useRouter()
@@ -25,11 +25,14 @@ const Detail:NextPage<{data:movie}> = ({data}) => {
     </div>:"loading..."}</>
 }
 
-export const getStaticPaths:GetStaticPaths= async() => {
-   return({paths:[],fallback:true})
-}
+export const getStaticPaths: GetStaticPaths = () => {
+    return {
+      paths: [],
+      fallback: "blocking",
+    };
+  };
 
-export const getStaticProps:GetStaticProps = async({params}) => {
+export const getServerSideProps:GetServerSideProps = async({params}) => {
     // await new Promise((resolve) => setTimeout(resolve, 10000))
     const data = await(await axios(`https://api.themoviedb.org/3/movie/${params?.id}?api_key=10923b261ba94d897ac6b81148314a3f`)).data
     return({props:{data}})
