@@ -31,9 +31,9 @@
 - get static props 와 get static paths 를 이용하여 페이지를 정적으로 만들며
   동적인 라우팅을 가지는 페이지는 사용자가 요청을 할때마다 페이지를 생성하는 방식.
 
-#### render_fourth
+#### render_fourth : react 18 version 의 server components를 이용하여 수성
 
--
+- 예정
 
 #### render_fifth
 
