@@ -37,7 +37,7 @@ return(<SWRConfig value={{fallback:{[detailLink as string]:data}}}>
 export const getServerSideProps:GetServerSideProps = async({params}) => {
     //영화마다 id값이 다르기 때문에 key url을 동적으로 생성하기 위해 링크도 같이 넘긴다.
 const detailLink = `/movie/${params?.id}`
-const data = await(await axios(`http://localhost:3000/movie/${params?.id}`)).data
+const data = await(await axios(`http://127.0.0.1:3000/movie/${params?.id}`)).data
     return({props:{data,detailLink}})
 }
 
