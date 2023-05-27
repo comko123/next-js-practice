@@ -30,7 +30,7 @@ const Main:NextPage<movie> = ({results}) => {
 export const getServerSideProps:GetServerSideProps = async() => {
     //sever-side에서 데이터를 불러온다.
     //페이지에서 getServerSideProps라는 함수를 export 하면 Next.js는 해당 함수에서 반환된 데이터를 사용하여 각 요청에서 이 페이지를 미리 랜더링한다.
-    const {results} = await(await axios("http://localhost:3000/movie/all")).data
+    const {results} = await(await axios("http://127.0.0.1:3000:3000/movie/all")).data
 return({props:{results}})
 }
 
