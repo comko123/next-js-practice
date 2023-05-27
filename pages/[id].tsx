@@ -28,7 +28,7 @@ const Detail:NextPage<{data:movie}> = ({data}) => {
 export const getStaticPaths:GetStaticPaths= async() => {
     // 몇개의 페이지가 있는지 next에게 알려주는 과정 
     // 아래의 코드의 patsh는 length가 20개이므로 20개의 detail페이지가 생성된다.
-    const {results} = await(await axios(`http://localhost:3000/movie/all`)).data 
+    const {results} = await(await axios(`http://127.0.0.1:3000/movie/all`)).data 
     const paths = results.map(({id}:{id:string})=>{return{params:{id:id+""}}})
    return({paths,fallback:false})
 }
