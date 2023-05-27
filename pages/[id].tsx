@@ -55,7 +55,7 @@ export const getStaticProps:GetStaticProps = async({params}) => {
     정적(static)인 html파일로 build하기 때문에 지연이 발생하지 않는다.
     (해당페이지를 처음 이후에 cache하기때문.)
    */ 
-  const data = await(await axios(`http://localhost:3000/movie/${params?.id}`)).data
+  const data = await(await axios(`http://127.0.0.1:3000/movie/${params?.id}`)).data
     return({props:{data},
       revalidate:20
     /*revalidate 는 html을 regenerate 할 수 있게하는 옵션이다.
