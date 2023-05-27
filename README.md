@@ -7,6 +7,8 @@
 
 - 뼈대는 방식에 따라 team movie api를 이용한 영화 페이지를 이용한 게시판으로 진행 
 
+- sever side props 나 static props 같은 문법에서 데이터 fetching을 할때에는 localhost가아닌 127.0.0.1을 붙여 fetching를 진행 
+
 ## tools
 - git  
 - swr
