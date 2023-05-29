@@ -12,7 +12,7 @@
 
 - next-js 에서 지원하는 Link는 다른페이지를 미리로드하는 prefetch속성을 가지고있다.
 
-- next-js 에서 지원하는 Image는 자동으로 loading="lazy" 속성이 부여되어있고 한번 모든 페이지의 이미지를 모두 load한후 reload를 진행하면 전에load한 이미지를 사용한다. 
+- next-js 에서 지원하는 Image는 자동으로 loading="lazy" 속성이 부여되어 있으며 최초 페이지 load시가 아닌 필요할때 이미지를 load한다. 
 
 ## tools
 - git  
