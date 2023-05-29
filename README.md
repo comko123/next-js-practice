@@ -7,7 +7,12 @@
 
 - 뼈대는 방식에 따라 team movie api를 이용한 영화 페이지를 이용한 게시판으로 진행 
 
+## 새로 알게된 next-js 규칙
 - sever side props 나 static props 같은 문법에서 데이터 fetching을 할때에는 localhost가아닌 127.0.0.1을 붙여 fetching를 진행 
+
+- next-js 에서 지원하는 Link는 다른페이지를 미리로드하는 prefetch속성을 가지고있다.
+
+- next-js 에서 지원하는 Image는 자동으로 loading="lazy" 속성이 부여되어있고 한번 모든 페이지의 이미지를 모두 load한후 reload를 진행하면 전에load한 이미지를 사용한다. 
 
 ## tools
 - git  
