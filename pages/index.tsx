@@ -13,7 +13,7 @@ const {data:{results}} = useSWR("/movie/all")
 클라이언트 측에서 caching, revalidation, focus tracking, refetching와 같은 기능도 사용 가능하다.*/
 return(<div className="grid grid-cols-5 my-3">
 {results?.map((item:movie)=><Link href={`/${item.id}`} key={item.id as string}>
-<Image width={3000} height={30} alt="" priority 
+<Image width={300} height={300} alt="" priority 
 className="w-52 aspect-square my-2 shadow-xl rounded-xl mx-auto hover:scale-x-105 transition-transform cursor-pointer" 
 src={`https://image.tmdb.org/t/p/w500/${item.poster_path as string}`}/>
 </Link>)}
