@@ -7,7 +7,7 @@ import { movie } from "."
 const Detail:NextPage<{data:movie}> = ({data}) => {
     const {replace} = useRouter()
     return<>{data?<div className="grid grid-cols-2 gap-3 m-3 ">
-    <Image width={3000} height={30} alt=""  priority
+    <Image width={300} height={300} alt=""  priority
     src={`https://image.tmdb.org/t/p/w500/${data.backdrop_path as string}`}
     className="h-[95vh] aspect-square rounded-2xl cursor-pointer"/>
     
