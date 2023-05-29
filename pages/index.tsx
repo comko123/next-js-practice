@@ -15,7 +15,7 @@ const Main:NextPage<{results:movie[]}> = ({results}) => {
                 아마 next-js에서 제공하는 Link가 다른 detail페이지들과 연동이 되어 있는것같다.
                 그로인해 위와같은 현상이 발생하는것 같다. 
                 */}
-                <Image width={3000} height={30} alt="" priority
+                <Image width={300} height={300} alt="" priority
                 className="w-52 aspect-square my-2 shadow-xl rounded-xl mx-auto hover:scale-x-105 transition-transform cursor-pointer" 
                 src={`https://image.tmdb.org/t/p/w500/${item.poster_path as string}`}/>
                 </div>)})}</div>)
