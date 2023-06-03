@@ -14,6 +14,8 @@
 
 - next-js 에서 지원하는 Image는 자동으로 loading="lazy" 속성이 부여되어 있으며 최초 페이지 load시가 아닌 필요할때 이미지를 load한다. 
 
+- getServerProps 나 getStaticProps 같은 서버에서 실행되는 함수들은 csr과 달리 서버에서 실행되기 때문에 브라우저에 api key같은 중요정보들이 노출되지 않아 rewrites를 굳이 사용할 필요가 없다. 
+
 ## tools
 - git  
 - swr
